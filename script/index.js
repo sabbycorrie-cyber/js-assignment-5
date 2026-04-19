@@ -1,5 +1,7 @@
+//Assignment lesson JS5: Objects and Scope.  
+
 const account = {
-    accountName: "Nick",
+    accountName: "Cat",
     accountBalance: 1000,
 
     getBalance() {
@@ -18,7 +20,7 @@ const account = {
             this.accountBalance -= amount;
             console.log(`You withdrew ${amount}. Your new balance is ${this.accountBalance}`);
         }
-    }
+    },
     getAccountName() {
         console.log(`Account name: ${this.accountName}`);
     },
@@ -28,3 +30,13 @@ const account = {
 };
 
 account.getAccountName();
+account.getBalance();
+
+account.deposit(500);
+account.getBalance();
+
+account.withdraw(200);
+account.getBalance();
+
+account.withdraw(1500);
+account.getBalance();
