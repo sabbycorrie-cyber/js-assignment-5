@@ -34,7 +34,7 @@ function atm() {
     while (running) {
         const input  = prompt(`Select an option: 
             1) Get Balance, 2) Deposit, 3) Withdraw, 
-            4) Exit`);
+            4) Get Account Name, 5) Exit`);
 
             if (input === null) {
                 running = false;
@@ -49,21 +49,21 @@ function atm() {
             }
 
             switch (message) {
-                case "1":
+                case 1:
                     account.getBalance();
                     break;
-                case "2":
+                case 2:
                     const depositAmount = parseFloat(prompt("Enter deposit amount:"));
                     account.deposit(depositAmount);
                     break;
-                case "3":
+                case 3:
                     const withdrawAmount = parseFloat(prompt("Enter withdraw amount:"));
                     account.withdraw(withdrawAmount);
                     break;
-                case "4":
+                case 4:
                     account.getAccountName();
                     break;
-                case "5":
+                case 5:
                     running = false;
                     alert("Goodbye!");
                     break;
