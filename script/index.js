@@ -29,6 +29,51 @@ const account = {
     }
 };
 
+function atm() {
+    let running = true;
+    while (running) {
+        const input  = prompt(`Select an option: 
+            1) Get Balance, 2) Deposit, 3) Withdraw, 
+            4) Exit`);
+
+            if (input === null) {
+                running = false;
+                break;
+            }
+
+            const message = parseFloat(input);
+
+            if (isNaN(message)) {
+                alert("Invalid input.");
+                continue;
+            }
+
+            switch (message) {
+                case "1":
+                    account.getBalance();
+                    break;
+                case "2":
+                    const depositAmount = parseFloat(prompt("Enter deposit amount:"));
+                    account.deposit(depositAmount);
+                    break;
+                case "3":
+                    const withdrawAmount = parseFloat(prompt("Enter withdraw amount:"));
+                    account.withdraw(withdrawAmount);
+                    break;
+                case "4":
+                    account.getAccountName();
+                    break;
+                case "5":
+                    running = false;
+                    alert("Goodbye!");
+                    break;
+                default:
+                    alert("Invalid option.");
+            }
+    }
+}
+
+atm();
 account.getAccountName();
 account.getBalance();
 
